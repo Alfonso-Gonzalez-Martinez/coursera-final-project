@@ -16,7 +16,7 @@
     border-radius: 30px;
     max-height: 150px;
     align-self: center;
-    box-shadow: 5px 5px 10px black ;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.267) ;
 }
 .footer-right{
     display: flex;
@@ -46,7 +46,7 @@
     font-weight: bold;
     color: white;
     white-space: nowrap;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.103);
 }
 
 @media (max-width: 650px) {

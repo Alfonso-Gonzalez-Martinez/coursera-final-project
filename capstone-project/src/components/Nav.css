@@ -22,13 +22,15 @@
     max-width: 70%;
     height: 100%;
     margin-right: auto;
-    padding-right: 1rem;
     overflow-x: hidden;
 }
 .nav-items{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     margin: auto;
+    flex-wrap: wrap;
 }
 .nav-items li{
     font-family: "Karla", sans-serif;

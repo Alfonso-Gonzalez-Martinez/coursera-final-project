@@ -25,25 +25,27 @@
 }
 .text-container h2{
     font-family: "Markazi text", sans-serif;
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 100;
     margin-top: 0;
+    margin-bottom: 0;
     color: white;
     white-space: nowrap;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
 }
 .text-container p{
     font-family: "Markazi text", sans-serif;
-    font-size: 1rem;
-    font-weight: 100;
+    font-size: 1.2rem;
+    font-weight: lighter;
     margin-bottom: 1.5rem;
     color: white;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
 }
 .text-container button{
     font-family: "Karla", sans-serif;
+    font-size: 1rem;
     font-weight: bolder;
-    width: 100px;
+    width: 150px;
     padding: 8px 8px;
     border-radius: 5px;
     border: none;
@@ -58,9 +60,9 @@
     margin-right: auto;
 }
 .image-container img{
-    height: 250px;
+    height: 290px;
     border-radius: 20px;
-    transform:translateY(4rem);
+    transform:translateY(2.8rem);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
 }
 
