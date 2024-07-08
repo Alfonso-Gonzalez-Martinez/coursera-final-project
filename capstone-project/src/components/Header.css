@@ -1,0 +1,76 @@
+.header-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    background-color: #495E57;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    margin-left: auto;
+    margin-right: 100px;
+}
+.text-container h1{
+    font-family: "Markazi text", sans-serif; 
+    font-size: 4rem;
+    font-weight: 200;
+    margin-bottom: 0;
+    color: #F4CE14;
+    white-space: nowrap;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
+}
+.text-container h2{
+    font-family: "Markazi text", sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-top: 0;
+    color: white;
+    white-space: nowrap;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
+}
+.text-container p{
+    font-family: "Markazi text", sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
+}
+.text-container button{
+    font-family: "Karla", sans-serif;
+    font-weight: bolder;
+    width: 100px;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    background-color: #F4CE14;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
+
+}
+.image-container{
+    display: flex;
+    max-width: 50%;
+    margin-right: auto;
+}
+.image-container img{
+    height: 250px;
+    border-radius: 20px;
+    transform:translateY(4rem);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
+}
+
+@media (max-width: 650px) {
+    .image-container{
+        display: none;
+    }
+    .text-container{
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

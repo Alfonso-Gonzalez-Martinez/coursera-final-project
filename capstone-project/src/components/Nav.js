@@ -1,4 +1,5 @@
 import logo from '../assets/logo.svg'
+import './Nav.css'
 
 function Nav(){
     return(
@@ -8,7 +9,7 @@ function Nav(){
                     <img src={logo} alt="little lemon logo"></img>
                 </div>
                 <div className="nav-right">
-                    <ul>
+                    <ul className="nav-items">
                         <li><a>Home</a></li>
                         <li><a>About</a></li>
                         <li><a>Menu</a></li>
