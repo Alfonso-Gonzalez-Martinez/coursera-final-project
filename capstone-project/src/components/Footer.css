@@ -24,11 +24,9 @@
     max-width: 70%;
     height: 100%;
     margin-right: auto;
-    overflow: hidden;
 }
 .footer-links{
     flex-direction: column;
-    justify-content: flex-start;
     padding-top: 50px;
     margin: 20px;
 }

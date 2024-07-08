@@ -51,12 +51,10 @@
     border: none;
     color: black;
     background-color: #F4CE14;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
-
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144)
 }
 .image-container{
     display: flex;
-    max-width: 50%;
     margin-right: auto;
 }
 .image-container img{

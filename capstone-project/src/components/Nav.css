@@ -7,7 +7,6 @@
 }
 .nav-left{
     display: flex;
-    align-content: center;
     margin-left: auto;
     height: 100%;
 }
@@ -22,15 +21,14 @@
     max-width: 70%;
     height: 100%;
     margin-right: auto;
-    overflow-x: hidden;
 }
 .nav-items{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: auto;
     flex-wrap: wrap;
+    margin: auto;
 }
 .nav-items li{
     font-family: "Karla", sans-serif;
