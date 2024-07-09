@@ -5,12 +5,16 @@ import About from './pages/About.js'
 import Home from './pages/Home.js'
 import Reservations from './pages/Reservations.js'
 import Header from './components/Header.js'
+import Specials from './components/Specials.js'
+import Testimonials from './components/Testimonials.js'
 
 function App() {
   return (
     <>
     <Nav />
     <Header />
+    <Specials />
+    <Testimonials />
       <Home />
       <About />
       <Reservations />
