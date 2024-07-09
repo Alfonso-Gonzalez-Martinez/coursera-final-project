@@ -1,0 +1,65 @@
+.testimonials-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #edefee;
+}
+.testimonials-container > h2{
+    padding-top: 20px;
+    font-family: "Karma", sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.testimonials-cards{
+    display: flex;
+    flex-direction: row;
+}
+.card{
+    width: 125px;
+    height: auto;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.192);
+    margin: 10px;
+    margin-bottom: 50px;
+}
+.card h2{
+    font-size: 1rem;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.192);
+
+}
+.card-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.card-block img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.192);
+}
+.card-block > p{
+    font-family: "Karma", sans-serif;
+    font-weight: bold;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.192);
+}
+.card > p{
+    font-family: "Karma", sans-serif;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.192);
+    white-space: wrap;
+}
+
+@media (max-width: 650px) {
+    .testimonials-cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
+

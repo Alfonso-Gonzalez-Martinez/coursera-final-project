@@ -1,5 +1,6 @@
 import logo from '../assets/logo.svg'
 import './Nav.css'
+import {Link} from 'react-router-dom' 
 
 function Nav(){
     return(
@@ -10,12 +11,12 @@ function Nav(){
                 </div>
                 <div className="nav-right">
                     <ul className="nav-items">
-                        <li><a>Home</a></li>
-                        <li><a>About</a></li>
-                        <li><a>Menu</a></li>
-                        <li><a>Reservations</a></li>
-                        <li><a>Orders online</a></li>
-                        <li><a>Log in</a></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/About">About</Link></li>
+                        <li><Link to="/">Menu</Link></li>
+                        <li><Link to="/Reservations">Reservations</Link></li>
+                        <li><Link to="/">Orders online</Link></li>
+                        <li><Link to="/">Log in</Link></li>
                     </ul>
                 </div>
             </div>

@@ -1,17 +1,31 @@
 .specials-container{
     display: flex;
     flex-direction: column;
+    margin-top: 50px;
 }
 .specials-up{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 .specials-up h2{
+    margin-right: 170px;
+    font-family: "Karma", sans-serif;
 }
 .specials-up button{
-
+    font-family: "Karla", sans-serif;
+    font-size: 1rem;
+    font-weight: bolder;
+    width: 150px;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    background-color: #F4CE14;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
+    cursor: pointer;
 }
 .specials-down{
     display: flex;
@@ -62,4 +76,20 @@
     font-family: "Karla", sans-serif;
     font-size: 0.9rem;
     margin-top: auto;
+}
+
+@media (max-width: 650px) {
+    .specials-up{
+        flex-direction: column;
+    }
+    .specials-up h2{
+        margin-right: 0;
+    }
+    .specials-down{
+        display: flex;
+        flex-direction: row;
+        align-items:end;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }

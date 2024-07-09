@@ -6,7 +6,7 @@ function Specials(){
     <>
         <div className="specials-container">
             <div className="specials-up">
-                <h2>This week Specials</h2>
+                <h2>This Week's Specials</h2>
                 <button>Online Menu</button>
             </div>
             <div className="specials-down">

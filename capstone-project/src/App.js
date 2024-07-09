@@ -4,21 +4,21 @@ import Nav from './components/Nav.js';
 import About from './pages/About.js'
 import Home from './pages/Home.js'
 import Reservations from './pages/Reservations.js'
-import Header from './components/Header.js'
-import Specials from './components/Specials.js'
-import Testimonials from './components/Testimonials.js'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
     <>
-    <Nav />
-    <Header />
-    <Specials />
-    <Testimonials />
-      <Home />
-      <About />
-      <Reservations />
-    <Footer />
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path="/" exact Component={Home} />
+        <Route path="/About" exact Component={About} />
+        <Route path="/Reservations" exact Component={Reservations} />
+      </Routes>
+      <Footer />
+    </Router>
+   
     </>
   );
 }

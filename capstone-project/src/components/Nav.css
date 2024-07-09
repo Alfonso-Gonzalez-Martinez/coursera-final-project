@@ -36,7 +36,6 @@
     font-weight: bold;
     padding: 1rem;
     white-space: nowrap;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
 }
 @media (max-width: 650px) {
     .nav-left img{
