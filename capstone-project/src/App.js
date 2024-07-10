@@ -5,11 +5,13 @@ import About from './pages/About.js'
 import Home from './pages/Home.js'
 import Reservations from './pages/Reservations.js'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import ContextProvider from './Context.js';
 
 function App() {
   return (
     <>
     <Router>
+      <ContextProvider>
       <Nav />
       <Routes>
         <Route path="/" exact Component={Home} />
@@ -17,8 +19,8 @@ function App() {
         <Route path="/Reservations" exact Component={Reservations} />
       </Routes>
       <Footer />
+      </ContextProvider>
     </Router>
-   
     </>
   );
 }
