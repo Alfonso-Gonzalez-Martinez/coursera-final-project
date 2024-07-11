@@ -1,4 +1,4 @@
-import React, {createContext, useState, useReducer} from 'react';
+import React, {createContext, useState, useReducer, useEffect} from 'react';
 
 export const FormContext = createContext()
 
@@ -15,11 +15,9 @@ export function initializeTimes(){
     return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
 }
 
-export function updateTimes(e){
-    // Use event to take the date from the input and fetch data from that date.
-    // New data is the updated Times. For the specific date, there are these hours available [].
-    const updatedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00"];
-    return updatedTimes;
+export function updateTimes(data){ // my date is stored here, and this is not in useEffect.
+    const updatedTimes = data;
+    availableTimes = updatedTimes;
 }
 
 
@@ -34,6 +32,17 @@ function ContextProvider(props){
 
     const [availableTimes, dispatch] = useReducer(
         availableTimesReducer, [], initializeTimes);
+
+
+
+useEffect(() => {
+    fetch(url, date) // how to pass the date to the fetch. 
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+}, [form.date])
+
 
 
 
