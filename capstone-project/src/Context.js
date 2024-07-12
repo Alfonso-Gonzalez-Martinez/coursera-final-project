@@ -11,16 +11,6 @@ export const availableTimesReducer = (state, action) => {
     }
 }
 
-export function initializeTimes(){
-    return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
-}
-
-export function updateTimes(data){ // my date is stored here, and this is not in useEffect.
-    const updatedTimes = data;
-    availableTimes = updatedTimes;
-}
-
-
 
 function ContextProvider(props){
 
@@ -34,22 +24,36 @@ function ContextProvider(props){
         availableTimesReducer, [], initializeTimes);
 
 
+function initializeTimes(){
+    return [];
+}
+
+const fetchData = async (date) => {
+        try{
+            const response = await fetch(`url{date}`);
+            if(!response.ok) {
+                throw new Error('Network not responding')
+            }
+            const newAvailableTimes = await response.json();
+            return newAvailableTimes;
+        }
+        catch(error){
+            throw error;
+        }
+    }
+
 
 useEffect(() => {
-    fetch(url, date) // how to pass the date to the fetch. 
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        })
-}, [form.date])
-
-
+    if (form.date) {
+        fetchData(form.date).then(newAvailableTimes => {
+            dispatch({ type: 'SET_TIMES', payload: newAvailableTimes });
+        });
+    }
+}, [form.date]);
 
 
     function handleDate(e){
         setForm((f) => ({...f, date: e.target.value}));
-        dispatch({type: "SET_TIMES", payload: updateTimes(e.target.value)}) // e.target feeds the day to updateTimes, updateTimes uses the date to fetch the array with possible hours
-                                              // the dispatch uses the array to change the state of the availableTimes
     }
     function handleRestTime(e){
         setForm((f) => ({...f, resTime: e.target.value}))
@@ -62,7 +66,6 @@ useEffect(() => {
     }
     function handleSubmit(e){
         e.preventDefault()
-        console.log(form)
     }
 
     const contextValue = {form, setForm, handleDate, handleRestTime, handleGuests, handleOccasion, handleSubmit, availableTimes}
