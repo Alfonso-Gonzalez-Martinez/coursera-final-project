@@ -1,16 +1,6 @@
-import React, {createContext, useState, useReducer, useEffect} from 'react';
+import React, {createContext, useState, useReducer} from 'react';
 
 export const FormContext = createContext()
-
-export const availableTimesReducer = (state, action) => {
-    switch (action.type) {
-        case 'SET_TIMES':
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
 
 function ContextProvider(props){
 
@@ -20,40 +10,47 @@ function ContextProvider(props){
                                         occasion: ""
                                     })
 
-    const [availableTimes, dispatch] = useReducer(
-        availableTimesReducer, [], initializeTimes);
 
+    const seededRandom = function (seed) {
+        var m = 2**35 - 31;
+        var a = 185852;
+        var s = seed % m;
+        return function () {
+            return (s = s * a % m) / m;
+        };
+    }
 
-function initializeTimes(){
-    return [];
-}
+    const fetchAPI = function(date) {
+        let result = [];
+        let random = seededRandom(date.getDate());
 
-const fetchData = async (date) => {
-        try{
-            const response = await fetch(`url{date}`);
-            if(!response.ok) {
-                throw new Error('Network not responding')
+        for(let i = 17; i <= 23; i++) {
+            if(random() < 0.5) {
+                result.push(i + ':00');
             }
-            const newAvailableTimes = await response.json();
-            return newAvailableTimes;
+            if(random() < 0.5) {
+                result.push(i + ':30');
+            }
         }
-        catch(error){
-            throw error;
+        return result;
+    };
+
+    const initializeTimes = () => fetchAPI (new Date())
+
+    const [availableTimes, dispatch] = useReducer(updateTimes,[], initializeTimes);
+
+    function updateTimes (state, action) {
+        switch(action.type) {
+            case "UPDATE_TIME":
+                return fetchAPI (new Date(action.payload))
+            default:
+                return state;
         }
     }
-
-
-useEffect(() => {
-    if (form.date) {
-        fetchData(form.date).then(newAvailableTimes => {
-            dispatch({ type: 'SET_TIMES', payload: newAvailableTimes });
-        });
-    }
-}, [form.date]);
-
 
     function handleDate(e){
         setForm((f) => ({...f, date: e.target.value}));
+        dispatch({type: "UPDATE_TIME", payload: (e.target.value)})
     }
     function handleRestTime(e){
         setForm((f) => ({...f, resTime: e.target.value}))
