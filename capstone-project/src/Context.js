@@ -18,6 +18,15 @@ const fetchAPI = function(date) {
     return result;
 };
 
+function updateTimes (state, action) {
+    switch(action.type) {
+        case "UPDATE_TIME":
+            return fetchAPI (new Date(action.payload))
+        default:
+            return state;
+    }
+}
+
 const seededRandom = function (seed) {
     var m = 2**35 - 31;
     var a = 185852;
@@ -35,20 +44,9 @@ function ContextProvider(props){
                                         occasion: ""
                                     })
 
-
-   
-
-
     const [availableTimes, dispatch] = useReducer(updateTimes,[], initializeTimes);
 
-    function updateTimes (state, action) {
-        switch(action.type) {
-            case "UPDATE_TIME":
-                return fetchAPI (new Date(action.payload))
-            default:
-                return state;
-        }
-    }
+
     const navigate = useNavigate()
     const submitAPI = form => true;
     function submitForm(form) {
@@ -85,7 +83,7 @@ function ContextProvider(props){
     )
 }
 
-export {initializeTimes}
+export {initializeTimes, updateTimes}
 export default ContextProvider;
 
 
