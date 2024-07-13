@@ -1,5 +1,8 @@
 import React, {createContext, useState, useReducer} from 'react';
 import {useNavigate} from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 export const FormContext = createContext()
 
 const initializeTimes = () => fetchAPI (new Date())
@@ -36,11 +39,19 @@ const seededRandom = function (seed) {
     };
 }
 
+const validationSchema = Yup.object({
+    resDate: Yup.string().required('Date is required'),
+    resTime: Yup.string().required('Reservation time is required'),
+    guests: Yup.number().required('Number of guests is required').min(1, 'At least 1 guest').max(10, 'Maximum 10 guests'),
+    occasion: Yup.string().required('Occasion is required')
+});
+////////////////////////////////////
+
 function ContextProvider(props){
 
-    const [form, setForm] = useState({  date: "",
+    const [form, setForm] = useState({  resDate: "",
                                         resTime: "",
-                                        guests: "",
+                                        guests: "1",
                                         occasion: ""
                                     })
 
@@ -55,25 +66,76 @@ function ContextProvider(props){
         }
     }
 
+    const formik = useFormik({
+        initialValues: form,
+        validationSchema,
+        validateOnChange: false, // We will handle validation manually
+        validateOnBlur: false,
+        onSubmit: submitForm
+    });
+
     function handleDate(e){
-        setForm((f) => ({...f, date: e.target.value}));
+        const {name, value} = e.target;
+        setForm((f) => ({...f, resDate: e.target.value}));
         dispatch({type: "UPDATE_TIME", payload: (e.target.value)})
+
+        formik.setFieldValue(name, value, false);
     }
     function handleRestTime(e){
+        const {name, value} = e.target;
         setForm((f) => ({...f, resTime: e.target.value}))
+
+
+        formik.setFieldValue(name, value, false);
     }
     function handleGuests(e){
         setForm((f) => ({...f, guests: e.target.value}))
+        const {name, value} = e.target;
+
+        formik.setFieldValue(name, value, false);
     }
     function handleOccasion(e){
         setForm((f) => ({...f, occasion: e.target.value}))
-    }
-    function handleSubmit(e){
-        e.preventDefault();
-        submitForm(form);
+        const {name, value} = e.target;
+
+        formik.setFieldValue(name, value, false);
     }
 
-    const contextValue = {form, setForm, handleDate, handleRestTime, handleGuests, handleOccasion, handleSubmit, availableTimes}
+    function handleBlur(e) {
+        const { name } = e.target;
+        formik.validateField(name);
+    }
+
+    function handleSubmit(e){
+        e.preventDefault();
+        formik.validateForm().then(validationErrors => {
+            if (Object.keys(validationErrors).length === 0) {
+                submitForm(form);
+            } else {
+                formik.setErrors(validationErrors);
+            }
+        })
+        console.log(form)
+        setForm({
+                resDate: "",
+                resTime: "",
+                guests: "1",
+                occasion: ""
+            })
+    }
+
+    const contextValue = {
+        form, 
+        setForm, 
+        handleDate, 
+        handleRestTime, 
+        handleGuests, 
+        handleOccasion, 
+        handleSubmit,
+        handleBlur, 
+        availableTimes,
+        errors: formik.errors,
+    }
     return (
         <>
             <FormContext.Provider value={contextValue}>
