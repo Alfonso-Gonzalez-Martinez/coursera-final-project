@@ -3,12 +3,12 @@ import { FormContext } from "../Context.js";
 
 function BookingForm(){
 
-    const { form, 
-            handleDate, 
-            handleGuests, 
-            handleOccasion, 
-            handleRestTime, 
-            handleSubmit, 
+    const { form,
+            handleDate,
+            handleGuests,
+            handleOccasion,
+            handleRestTime,
+            handleSubmit,
             availableTimes,
             errors,
             handleBlur
