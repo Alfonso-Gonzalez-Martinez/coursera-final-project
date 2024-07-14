@@ -45,7 +45,6 @@ const validationSchema = Yup.object({
     guests: Yup.number().required('Number of guests is required').min(1, 'At least 1 guest').max(10, 'Maximum 10 guests'),
     occasion: Yup.string().required('Occasion is required')
 });
-////////////////////////////////////
 
 function ContextProvider(props){
 
@@ -135,22 +134,23 @@ function ContextProvider(props){
                     guests: "1",
                     occasion: ""
                 })
+                console.log(form)
             } else {
                 formik.setErrors(validationErrors);
             }
         })
-        console.log(form)
+
     }
 
     const contextValue = {
-        form, 
-        setForm, 
-        handleDate, 
-        handleRestTime, 
-        handleGuests, 
-        handleOccasion, 
+        form,
+        setForm,
+        handleDate,
+        handleRestTime,
+        handleGuests,
+        handleOccasion,
         handleSubmit,
-        handleBlur, 
+        handleBlur,
         availableTimes,
         errors: formik.errors,
     }

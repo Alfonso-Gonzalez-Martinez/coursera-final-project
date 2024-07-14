@@ -60,7 +60,7 @@ function BookingForm(){
                         onBlur={handleBlur}/>
                 {errors.guests && <div className="error">{errors.guests}</div>}
             </div>
-            
+
             <div>
                 <label htmlFor="occasion">Occasion</label>
                 <select
@@ -75,7 +75,6 @@ function BookingForm(){
                 </select>
                 {errors.occasion && <div className="error">{errors.occasion}</div>}
             </div>
-            
 
             <input type="submit"/>
         </form>
