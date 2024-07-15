@@ -42,7 +42,7 @@ const seededRandom = function (seed) {
 const validationSchema = Yup.object({
     resDate: Yup.string().required('Date is required'),
     resTime: Yup.string().required('Reservation time is required'),
-    guests: Yup.number().required('Number of guests is required').min(1, 'At least 1 guest').max(10, 'Maximum 10 guests'),
+    guests: Yup.number('The value provided must be a number').required('Number of guests is required').min(1, 'At least 1 guest').max(10, 'Maximum 10 guests'),
     occasion: Yup.string().required('Occasion is required')
 });
 
@@ -52,7 +52,7 @@ function ContextProvider(props){
         resDate: "",
         resTime: "",
         guests: "1",
-        occasion: ""
+        occasion: "",
     };
 
     const [form, setForm] = useState(savedFormState);
@@ -132,7 +132,7 @@ function ContextProvider(props){
                     resDate: "",
                     resTime: "",
                     guests: "1",
-                    occasion: ""
+                    occasion: "",
                 })
                 console.log(form)
             } else {
