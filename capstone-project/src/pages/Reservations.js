@@ -1,9 +1,9 @@
 import BookingForm from "../components/BookingForm.js";
 
-function Reservations(){
+function Reservations({availableTimes, dispatch, submitForm }){
     return(
     <>
-        <BookingForm />
+        <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>
     </>
     )
 }
