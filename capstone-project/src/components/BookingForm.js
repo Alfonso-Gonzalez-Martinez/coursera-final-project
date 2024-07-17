@@ -103,7 +103,7 @@ function BookingForm({availableTimes, dispatch, submitForm }){
                     name="resDate"
                     value={form.resDate}
                     onChange={(e) => handleDate(e)}
-                    onBlur={validate} 
+                    onBlur={validate}
                     required/>
                 {errors.resDate && <span className="error">{errors.resDate}</span>}
             </div>
@@ -155,14 +155,17 @@ function BookingForm({availableTimes, dispatch, submitForm }){
                 {errors.occasion && <span className="error">{errors.occasion}</span>}
             </div>
 
-            <button type="submit"   disabled={
+            <button type="submit" aria-label='Make your Reservation' disabled={
                                     form.resDate==='' ||
                                     form.name==='' ||
-                                    form.email===''
+                                    form.email==='' ||
+                                    form.occasion ===''
                                     || errors.name
-                                    || errors.date
+                                    || errors.reDate
                                     || errors.guests
-                                    || errors.email}>Make your Reservation</button>
+                                    || errors.email
+                                    || errors.resTime
+                                    || errors.occasion}>Make your Reservation</button>
         </form>
         </>
     )

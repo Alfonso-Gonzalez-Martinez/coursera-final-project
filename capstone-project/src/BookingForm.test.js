@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, act} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import BookingForm from './components/BookingForm.js';
 
@@ -74,7 +74,7 @@ describe('BookingForm Component', () => {
     expect(mockSubmitForm).toHaveBeenCalled();
   });
 
-  test('does not submit the form with invalid data', () => {
+  test('does not submit the form with invalid name', async () => {
     // Invalid full name
     fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: 'Jo' } });
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'john.doe@example.com' } });
@@ -83,11 +83,17 @@ describe('BookingForm Component', () => {
     fireEvent.change(screen.getByLabelText(/number of guests/i), { target: { value: '4' } });
     fireEvent.change(screen.getByLabelText(/occasion/i), { target: { value: 'Birthday' } });
 
+    await act(() => {
+
+      fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
+    })
     let submitButton = screen.getByRole('button', { name: /make your reservation/i });
     expect(submitButton).toBeDisabled();
-    fireEvent.click(submitButton);
-    expect(mockSubmitForm).not.toHaveBeenCalled();
-
+      expect(mockSubmitForm).not.toHaveBeenCalled();
+  })
+  
+  test('does not submit the form with invalid email', async () => {
+  
     // Invalid email
     fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'invalid-email' } });
@@ -96,12 +102,16 @@ describe('BookingForm Component', () => {
     fireEvent.change(screen.getByLabelText(/number of guests/i), { target: { value: '4' } });
     fireEvent.change(screen.getByLabelText(/occasion/i), { target: { value: 'Birthday' } });
 
-    submitButton = screen.getByRole('button', { name: /make your reservation/i });
+    await act(() => {
+      fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
+    })
+    let submitButton = screen.getByRole('button', { name: /make your reservation/i });
     expect(submitButton).toBeDisabled();
-    fireEvent.click(submitButton);
     expect(mockSubmitForm).not.toHaveBeenCalled();
+  })
 
     // Invalid date
+    test('does not submit the form with invalid date', () => {
     fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'john.doe@example.com' } });
     fireEvent.change(screen.getByLabelText(/choose date/i), { target: { value: '' } });
@@ -109,12 +119,14 @@ describe('BookingForm Component', () => {
     fireEvent.change(screen.getByLabelText(/number of guests/i), { target: { value: '4' } });
     fireEvent.change(screen.getByLabelText(/occasion/i), { target: { value: 'Birthday' } });
 
-    submitButton = screen.getByRole('button', { name: /make your reservation/i });
+    let submitButton = screen.getByRole('button', { name: /make your reservation/i });
     expect(submitButton).toBeDisabled();
     fireEvent.click(submitButton);
     expect(mockSubmitForm).not.toHaveBeenCalled();
+    })
 
     // Invalid number of guests
+    test('does not submit the form with invalid guests', async () => {
     fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: 'John Doe' } });
     fireEvent.change(screen.getByLabelText(/email address/i), { target: { value: 'john.doe@example.com' } });
     fireEvent.change(screen.getByLabelText(/choose date/i), { target: { value: '2023-12-31' } });
@@ -122,9 +134,12 @@ describe('BookingForm Component', () => {
     fireEvent.change(screen.getByLabelText(/number of guests/i), { target: { value: '11' } });
     fireEvent.change(screen.getByLabelText(/occasion/i), { target: { value: 'Birthday' } });
 
-    submitButton = screen.getByRole('button', { name: /make your reservation/i });
+    await act(() => {
+      fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
+    })
+
+    let submitButton = screen.getByRole('button', { name: /make your reservation/i });
     expect(submitButton).toBeDisabled();
-    fireEvent.click(submitButton);
     expect(mockSubmitForm).not.toHaveBeenCalled();
   });
 });
