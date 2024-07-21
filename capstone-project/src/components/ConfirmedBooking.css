@@ -1,0 +1,16 @@
+.confirmed-booking{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 180px;
+}
+.confirmed-booking h1{
+    font-family: "Karla", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.confirmed-booking p{
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+}

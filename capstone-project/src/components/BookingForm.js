@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './BookingForm.css'
 
 function BookingForm({availableTimes, dispatch, submitForm }){
 
@@ -65,108 +66,114 @@ function BookingForm({availableTimes, dispatch, submitForm }){
 
     return(
         <>
-        <h1>Make your reservation</h1>
-        <form
-            style={{display: "grid", maxWidth: "200px", gap: "20px"}}
-            onSubmit={handleSubmit}>
+        <div className='form-container'>
+            <h1 className='form-header'>Make your reservation</h1>
+            <form
+                onSubmit={handleSubmit}>
+                
+                <div className='form-field'>
+                    <label htmlFor="name">Full name</label>
+                    <input
+                        type="text"
+                        placeholder="Enter your full name"
+                        minLength="3"
+                        maxLength="40"
+                        id="name"
+                        required
+                        value={form.name}
+                        onBlur={validate}
+                        onChange={(e) => handleName(e)}/>
+                    {errors.name && <span className="error">{errors.name}</span>}
+                </div>
 
-            <label htmlFor="name">Full name</label>
-            <input
-                type="text"
-                placeholder="Enter your full name"
-                minLength="3"
-                maxLength="40"
-                id="name"
-                required
-                value={form.name}
-                onBlur={validate}
-                onChange={(e) => handleName(e)}/>
-            {errors.name && <span className="error">{errors.name}</span>}
+                <div className='form-field'>
+                    <label htmlFor="email">Email address</label>
+                    <input
+                        type="email"
+                        placeholder="Enter your email adress"
+                        id="email"
+                        required
+                        value={form.email}
+                        onChange={(e) => handleEmail(e)}
+                        onBlur={validate}
+                        />
+                    {errors.email && <span className="error">{errors.email}</span>}
+                </div>
 
-            <label htmlFor="email">Email address</label>
-            <input
-                type="email"
-                placeholder="Enter your email adress"
-                id="email"
-                required
-                value={form.email}
-                onChange={(e) => handleEmail(e)}
-                onBlur={validate}
-                />
-            {errors.email && <span className="error">{errors.email}</span>}
-
-            <div>
-                <label htmlFor="resDate">Choose date</label>
-                <input
-                    type="date"
-                    id="resDate"
-                    name="resDate"
-                    value={form.resDate}
-                    onChange={(e) => handleDate(e)}
-                    onBlur={validate}
-                    required/>
-                {errors.resDate && <span className="error">{errors.resDate}</span>}
-            </div>
-            <div>
-                <label htmlFor="resTime">Choose time</label>
-                <select
-                    id="resTime"
-                    name="resTime"
-                    value={form.resTime}
-                    onChange={(e) => handleTime(e)}
-                    onBlur={validate}
-                    required>
-                        <option value="" disabled>Select an option</option>
-                        {availableTimes.map((element, index) => (
-                            <option key={index}>{availableTimes[index]}</option>
-                        ))}
-                </select>
-                {errors.resTime && <span className="error">{errors.resTime}</span>}
-            </div>
-
-            <div>
-                <label htmlFor="guests">Number of guests</label>
-                <input type="number"
-                        placeholder="1"
-                        value={form.guests}
-                        min="2"
-                        max="10"
-                        id="guests"
-                        name="guests"
-                        onChange={(e) => handleGuests(e)}
+                <div className='form-field'>
+                    <label htmlFor="resDate">Choose date</label>
+                    <input
+                        type="date"
+                        id="resDate"
+                        name="resDate"
+                        value={form.resDate}
+                        onChange={(e) => handleDate(e)}
                         onBlur={validate}
                         required/>
-                {errors.guests && <span className="error">{errors.guests}</span>}
-            </div>
+                    {errors.resDate && <span className="error">{errors.resDate}</span>}
+                </div>
 
-            <div>
-                <label htmlFor="occasion">Occasion</label>
-                <select
-                    id="occasion"
-                    name="occasion"
-                    value={form.occasion}
-                    onChange={(e) => handleOccasion(e)}
-                    onBlur={validate}
-                    >
-                        <option value="" disabled>Select an option</option>
-                        <option>Birthday</option>
-                        <option>Anniversary</option>
-                </select>
-                {errors.occasion && <span className="error">{errors.occasion}</span>}
-            </div>
+                <div className='form-field'>
+                    <label htmlFor="resTime">Choose time</label>
+                    <select
+                        id="resTime"
+                        name="resTime"
+                        value={form.resTime}
+                        onChange={(e) => handleTime(e)}
+                        onBlur={validate}
+                        required>
+                            <option value="" disabled>Select an option</option>
+                            {availableTimes.map((element, index) => (
+                                <option key={index}>{availableTimes[index]}</option>
+                            ))}
+                    </select>
+                    {errors.resTime && <span className="error">{errors.resTime}</span>}
+                </div>
 
-            <button type="submit" aria-label='Make your Reservation' disabled={
-                                    form.resDate==='' ||
-                                    form.name==='' ||
-                                    form.email==='' ||
-                                    form.occasion ===''
-                                    || errors.name
-                                    || errors.reDate
-                                    || errors.guests
-                                    || errors.email
-                                    || errors.resTime
-                                    || errors.occasion}>Make your Reservation</button>
-        </form>
+                <div className='form-field'>
+                    <label htmlFor="guests">Number of guests</label>
+                    <input type="number"
+                            placeholder="1"
+                            value={form.guests}
+                            min="2"
+                            max="10"
+                            id="guests"
+                            name="guests"
+                            onChange={(e) => handleGuests(e)}
+                            onBlur={validate}
+                            required/>
+                    {errors.guests && <span className="error">{errors.guests}</span>}
+                </div>
+
+                <div className='form-field'>
+                    <label htmlFor="occasion">Occasion</label>
+                    <select
+                        id="occasion"
+                        name="occasion"
+                        value={form.occasion}
+                        onChange={(e) => handleOccasion(e)}
+                        onBlur={validate}
+                        >
+                            <option value="" disabled>Select an option</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                    </select>
+                    {errors.occasion && <span className="error">{errors.occasion}</span>}
+                </div>
+
+                <button id="form-button" type="submit" aria-label='Make your Reservation' disabled={
+                                        form.resDate==='' ||
+                                        form.name==='' ||
+                                        form.email==='' ||
+                                        form.occasion ===''
+                                        || errors.name
+                                        || errors.reDate
+                                        || errors.guests
+                                        || errors.email
+                                        || errors.resTime
+                                        || errors.occasion}>Make your Reservation</button>
+            </form>
+        </div>
         </>
     )
 }

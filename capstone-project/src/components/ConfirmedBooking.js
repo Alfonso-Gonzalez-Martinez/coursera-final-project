@@ -1,10 +1,14 @@
 import React from 'react'
+import './ConfirmedBooking.css'
 
 
 function ConfirmedBooking(){
     return(
     <>
-     <h1>Booking Received</h1>
+    <div className='confirmed-booking'>
+        <h1>Booking Received</h1>
+        <p>Thank you for your booking!</p>
+    </div>
     </>
     )
 
