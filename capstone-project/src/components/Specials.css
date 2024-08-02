@@ -26,6 +26,10 @@
     background-color: #F4CE14;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.144);
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.specials-up button:hover{
+    background-color: hsla(50, 92%, 74%, 0.904);
 }
 .specials-down{
     display: flex;

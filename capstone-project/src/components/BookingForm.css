@@ -78,4 +78,11 @@ form{
     background-color: #F4CE14;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
     width: 60%;
+    transition: background-color 0.3s ease;
+}
+#form-button:hover{
+    background-color: hsla(50, 92%, 74%, 0.904);
+}
+#form-button:disabled{
+    background-color: hsla(40, 3%, 77%, 0.904);
 }

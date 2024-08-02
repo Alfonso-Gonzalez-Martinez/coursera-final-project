@@ -74,7 +74,6 @@ function App() {
 export default App;
 
 
-// Take away the text decoration from the links nav.
 // Add aria-label to the two buttons (in the homepage, double check the tests)
 // Add hover to the buttons and to the links in the footer (change color to contrasting)
 // Check colors, fonts and font sizes.
