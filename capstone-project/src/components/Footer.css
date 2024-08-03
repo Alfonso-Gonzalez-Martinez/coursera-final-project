@@ -46,6 +46,7 @@
     white-space: nowrap;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.103);
     transition: color 200ms ease;
+    text-decoration: none;
 }
 
 .footer-links a:hover{

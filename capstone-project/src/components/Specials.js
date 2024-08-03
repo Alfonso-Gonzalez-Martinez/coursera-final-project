@@ -1,5 +1,6 @@
 import './Specials.css'
 import { SPECIALS } from '../helpers/specials';
+import { Link } from 'react-router-dom';
 
 function Specials(){
     return(
@@ -7,7 +8,7 @@ function Specials(){
         <div className="specials-container">
             <div className="specials-up">
                 <h2>This Week's Specials</h2>
-                <button>Online Menu</button>
+                <button aria-label='Online Menu'>Online Menu</button>
             </div>
             <div className="specials-down">
                 {SPECIALS.map((element, index) => (
@@ -19,7 +20,7 @@ function Specials(){
                                 <p>{element.price}€</p>
                             </div>
                             <p>{element.description}</p>
-                            <a>Order delivery</a>
+                            <Link to="/">Order delivery</Link>
                         </div>
                     </div>
                 ))}

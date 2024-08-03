@@ -66,17 +66,10 @@ function App() {
           <Route path="/confirmed" element={<ConfirmedBooking />} />
           <Route path="/Reservations" element={<Reservations availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm}/>} />
         </Routes>
-        <Footer /> 
+        <Footer />
     </>
   );
 }
 
 export default App;
 
-
-// Add aria-label to the two buttons (in the homepage, double check the tests)
-// Add hover to the buttons and to the links in the footer (change color to contrasting)
-// Check colors, fonts and font sizes.
-// Links in the buttons (use LINK router) and in the logo.
-// Disabled in the form styling (light grey)
-// Extra hover all the cards in the first page (easy box shadow)

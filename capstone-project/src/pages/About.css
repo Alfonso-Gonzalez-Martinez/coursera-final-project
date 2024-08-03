@@ -17,6 +17,10 @@
     margin: 30px;
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.171);
+    transition: transform 0.3s ease;
+}
+.about-image-container img:hover{
+    transform: scale(1.05);
 }
 .about-text-container{
     display: flex;
@@ -27,9 +31,10 @@
     margin: 20px 300px;
 }
 .about-text-container h1{
-    font-family: "Karla", sans-serif;
-    font-size: 2rem;
+    font-family: "Markazi text", sans-serif;
+    font-size: 3rem;
     text-align: center;
+    color: #495E57;
 }
 .about-text-container p{
     font-family: "Karla", sans-serif;
