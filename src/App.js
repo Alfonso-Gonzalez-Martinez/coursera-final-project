@@ -1,12 +1,12 @@
-import './App.css';
+import {Route, Routes, useNavigate} from 'react-router-dom';
+import React, {useReducer} from 'react';
 import Footer from './components/Footer.js';
 import Nav from './components/Nav.js';
 import About from './pages/About.js'
 import Home from './pages/Home.js'
 import Reservations from './pages/Reservations.js'
 import ConfirmedBooking from './components/ConfirmedBooking.js'
-import {Route, Routes, useNavigate} from 'react-router-dom';
-import React, {useReducer} from 'react';
+import './App.css';
 
 
 function App() {

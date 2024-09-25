@@ -71,13 +71,13 @@
 .image-container img{
     height: 290px;
     border-radius: 20px;
-    transform:translateY(2.8rem);
+    transform:translateY(4rem);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.144);
     transition: transform 0.3s ease;
     transform-origin: center;
 }
 .image-container img:hover{
-    transform: translateY(2.8rem) scale(1.05);
+    transform: translateY(4rem) scale(1.05);
 }
 
 @media (max-width: 650px) {

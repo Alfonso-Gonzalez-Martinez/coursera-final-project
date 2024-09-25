@@ -9,9 +9,9 @@ function About(){
     <>
         <div className='about-container'>
             <div className='about-image-container'>
-                <img src={photo1}></img>
-                <img src={photo2}></img>
-                <img src={photo3}></img>
+                <img src={photo1} alt='Chef sprinkling the final touches in a dish'></img>
+                <img src={photo2} alt='A cook holding a dish'></img>
+                <img src={photo3} alt='A side view of the terrace of the restaurant'></img>
             </div>
             <div className='about-text-container'>
                 <h1>About Little Lemon Restaurant</h1>
