@@ -1,4 +1,4 @@
-import bruchetta from '../assets/dish-bruchetta.svg'
+import bruchetta from '../assets/dish-bruchetta.jpg'
 import salad from '../assets/dish-greek-salad.jpg'
 import lemon from '../assets/dish-lemon.jpg'
 
