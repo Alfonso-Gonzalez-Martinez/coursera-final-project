@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/coursera-final-project/static/css/main.2c886682.css",
-    "main.js": "/coursera-final-project/static/js/main.9cb07cd5.js",
+    "main.js": "/coursera-final-project/static/js/main.84c9074f.js",
     "static/js/453.f0e5cfda.chunk.js": "/coursera-final-project/static/js/453.f0e5cfda.chunk.js",
     "static/media/dish-bruchetta.svg": "/coursera-final-project/static/media/dish-bruchetta.29ea078fea3d3120ed22402e901b5bbc.svg",
     "static/media/image-chef.jpg": "/coursera-final-project/static/media/image-chef.4b4c2d26b514db32e8fc.jpg",
@@ -16,11 +16,11 @@
     "static/media/logo-edit.png": "/coursera-final-project/static/media/logo-edit.bfb05f678d5713cba2a8.png",
     "index.html": "/coursera-final-project/index.html",
     "main.2c886682.css.map": "/coursera-final-project/static/css/main.2c886682.css.map",
-    "main.9cb07cd5.js.map": "/coursera-final-project/static/js/main.9cb07cd5.js.map",
+    "main.84c9074f.js.map": "/coursera-final-project/static/js/main.84c9074f.js.map",
     "453.f0e5cfda.chunk.js.map": "/coursera-final-project/static/js/453.f0e5cfda.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c886682.css",
-    "static/js/main.9cb07cd5.js"
+    "static/js/main.84c9074f.js"
   ]
 }
