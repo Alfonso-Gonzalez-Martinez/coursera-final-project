@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/coursera-final-project/static/css/main.2c886682.css",
-    "main.js": "/coursera-final-project/static/js/main.84c9074f.js",
+    "main.js": "/coursera-final-project/static/js/main.dd9c4de5.js",
     "static/js/453.f0e5cfda.chunk.js": "/coursera-final-project/static/js/453.f0e5cfda.chunk.js",
-    "static/media/dish-bruchetta.svg": "/coursera-final-project/static/media/dish-bruchetta.29ea078fea3d3120ed22402e901b5bbc.svg",
     "static/media/image-chef.jpg": "/coursera-final-project/static/media/image-chef.4b4c2d26b514db32e8fc.jpg",
     "static/media/dish-greek-salad.jpg": "/coursera-final-project/static/media/dish-greek-salad.bed423a1fab5b210e347.jpg",
     "static/media/image-food.jpg": "/coursera-final-project/static/media/image-food.e8abf5b772b6817189aa.jpg",
@@ -11,16 +10,17 @@
     "static/media/photo3.png": "/coursera-final-project/static/media/photo3.ac1e2ca9d90a44463924.png",
     "static/media/photo1.png": "/coursera-final-project/static/media/photo1.a29ee9f7d596d7fe8798.png",
     "static/media/photo2.png": "/coursera-final-project/static/media/photo2.813505d4ee6f50da5ec0.png",
+    "static/media/dish-bruchetta.jpg": "/coursera-final-project/static/media/dish-bruchetta.16d6ccbad3536c2d7979.jpg",
     "static/media/image-restaurant.jpg": "/coursera-final-project/static/media/image-restaurant.324d0f99bdf19400a0f7.jpg",
     "static/media/logo.svg": "/coursera-final-project/static/media/logo.6c132dfefa69396bba43f72aa595e62f.svg",
     "static/media/logo-edit.png": "/coursera-final-project/static/media/logo-edit.bfb05f678d5713cba2a8.png",
     "index.html": "/coursera-final-project/index.html",
     "main.2c886682.css.map": "/coursera-final-project/static/css/main.2c886682.css.map",
-    "main.84c9074f.js.map": "/coursera-final-project/static/js/main.84c9074f.js.map",
+    "main.dd9c4de5.js.map": "/coursera-final-project/static/js/main.dd9c4de5.js.map",
     "453.f0e5cfda.chunk.js.map": "/coursera-final-project/static/js/453.f0e5cfda.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2c886682.css",
-    "static/js/main.84c9074f.js"
+    "static/js/main.dd9c4de5.js"
   ]
 }
