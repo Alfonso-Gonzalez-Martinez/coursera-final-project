@@ -1,5 +1,6 @@
 # Project Title: Little Lemon Restaurant Website
 
+Check the project at:
 [Little Lemon Restaurant Website](https://alfonso-gonzalez-martinez.github.io/coursera-final-project/#/) 
 
 ## Description
