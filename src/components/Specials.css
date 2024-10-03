@@ -39,7 +39,7 @@
 .specials-down{
     display: flex;
     flex-direction: row;
-    align-items:end;
+    align-items: end;
     justify-content: center;
 }
 .specials-card{
@@ -52,7 +52,7 @@
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.103);
-    transition: box-shadow 0.3s ease ;
+    transition: box-shadow 0.3s ease;
 }
 .specials-card:hover{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);

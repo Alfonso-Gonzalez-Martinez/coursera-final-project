@@ -1,3 +1,16 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+img, picture, video, canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 body{
     font-family: Arial, sans-serif;
     color: black;
@@ -14,3 +27,4 @@ ul, ol {
 button, a{
     cursor: pointer;
 }
+
