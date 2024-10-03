@@ -17,7 +17,7 @@
     flex-direction: row;
 }
 .card{
-    width: 125px;
+    width: 150px;
     height: auto;
     padding: 10px;
     border-radius: 15px;
@@ -30,7 +30,7 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.288);
 }
 .card h2{
-    font-size: 1rem;
+    font-size: 12px;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.192);
 
 }
@@ -54,6 +54,7 @@
 .card > p{
     font-family: "Karla", sans-serif;
     white-space: wrap;
+    font-size: 12px;
 }
 
 @media (max-width: 650px) {

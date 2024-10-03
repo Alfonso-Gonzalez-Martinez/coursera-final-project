@@ -45,7 +45,7 @@
 .specials-card{
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 200px;
     height: 350px;
     background-color: #edefee;
     margin: 10px;
@@ -59,7 +59,7 @@
 }
 .specials-down img{
     height: 150px;
-    width: 150px;
+    width: 200px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }

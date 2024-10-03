@@ -17,7 +17,7 @@ function BookingForm({availableTimes, dispatch, submitForm }){
     const validate = () => {
         const newErrors = {};
         if (!form.name || form.name.length < 3 || form.name.length > 40) {
-            newErrors.name = 'Name must be between 3 and 40 characters';
+            newErrors.name = 'Name between 3-40 characters';
         }
         if (!form.email || !/\S+@\S+\.\S+/.test(form.email)) {
             newErrors.email = 'Invalid email address';
