@@ -1,14 +1,15 @@
 import './Testimonials.css'
-import {REVIEWS} from '../helpers/reviews.js'
+import {REVIEWS} from '../helpers/reviews'
+import type {Reviews} from '../helpers/reviews'
 
-function Testimonials(){
+const Testimonials: React.FC = (): JSX.Element => {
     return(
     <>
         <div className="testimonials-container">
             <h2>Testimonials</h2>
             <div className="testimonials-cards">
-                {REVIEWS.map((element, index) => (
-                    <div key={index} className="card">
+                {REVIEWS.map((element: Reviews, index: number) => (
+                    <div key={index} className="card" data-testid="cards">
                         <h2>{element.rating}</h2>
                         <div className="card-block">
                             <img src={element.img} alt={element.name}/>

@@ -4,7 +4,14 @@ import photo3 from '../assets/testimonials/photo3.png'
 import photo4 from '../assets/testimonials/photo4.png'
 
 
-export const REVIEWS = [
+export type Reviews = {
+    img: string;
+    name: string;
+    rating: string;
+    review: string;
+}
+
+export const REVIEWS: Reviews[] = [
     {
         img: photo1,
         name: "Elena",

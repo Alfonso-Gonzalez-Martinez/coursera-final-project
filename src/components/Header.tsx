@@ -2,7 +2,7 @@ import food from '../assets/image-food.jpg'
 import './Header.css'
 import { Link } from 'react-router-dom';
 
-function Header(){
+const Header: React.FC = (): JSX.Element => {
     return(
     <>
         <div className="header-container">

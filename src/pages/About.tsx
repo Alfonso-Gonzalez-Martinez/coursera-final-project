@@ -4,7 +4,7 @@ import photo3 from '../assets/image-restaurant.jpg'
 
 import './About.css'
 
-function About(){
+const About: React.FC = (): JSX.Element => {
     return(
     <>
         <div className='about-container'>

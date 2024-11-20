@@ -1,8 +1,7 @@
-import React from 'react'
 import './ConfirmedBooking.css'
 
 
-function ConfirmedBooking(){
+const ConfirmedBooking: React.FC = (): JSX.Element => {
     return(
     <>
     <div className='confirmed-booking'>

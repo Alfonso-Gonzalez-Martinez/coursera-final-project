@@ -2,10 +2,9 @@ import logo from '../assets/logo.svg'
 import './Nav.css'
 import {Link} from 'react-router-dom'
 
-function Nav(){
+const Nav: React.FC = (): JSX.Element => {
     return(
-        <>
-            <div className="nav-container">
+            <nav className="nav-container" data-testid="nav-container">
                 <div className="nav-left">
                     <img src={logo} alt="little lemon logo"></img>
                 </div>
@@ -19,8 +18,7 @@ function Nav(){
                         <li><Link to="/">Log in</Link></li>
                     </ul>
                 </div>
-            </div>
-        </>
+            </nav>
     )
 }
 

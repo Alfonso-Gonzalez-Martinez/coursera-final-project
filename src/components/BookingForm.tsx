@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
 import './BookingForm.css'
 
-function BookingForm({availableTimes, dispatch, submitForm }){
+export type FormData = {
+    name: string;
+    email: string;
+    resDate: string;
+    resTime: string;
+    guests: number;
+    occasion: string
+}
+
+export type ReservationsProps = {
+    availableTimes: string[];
+    dispatch: React.Dispatch<any>;
+    submitForm: ((formData:FormData) => void);
+  }
+
+const BookingForm: React.FC<ReservationsProps> = ({availableTimes, dispatch, submitForm }): JSX.Element => {
 
 
-    const [form, setForm] = useState({  name: "",
+    const [form, setForm] = useState<FormData>({  name: "",
                                         email: "",
                                         resDate: "",
                                         resTime: "",
                                         guests: 1,
                                         occasion: "",
     });
-    const [errors, setErrors] = useState({});
+    const [errors, setErrors] = useState<Record<string, string>>({});
 
 
     const validate = () => {
-        const newErrors = {};
+        const newErrors: Record<string, string> = {};
         if (!form.name || form.name.length < 3 || form.name.length > 40) {
             newErrors.name = 'Name between 3-40 characters';
         }
@@ -38,30 +53,30 @@ function BookingForm({availableTimes, dispatch, submitForm }){
         return Object.keys(newErrors).length === 0;
       };
 
-      const handleSubmit = (e) => {
+      const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if(validate()) {
             console.log(form);
             submitForm (form);
         }}
   
-    function handleDate(e){
+    function handleDate(e: React.ChangeEvent<HTMLInputElement>){
         setForm((f) => ({...f, resDate: e.target.value}));
         dispatch({type: "UPDATE_TIME", payload: e.target.value})}
 
-    function handleName(e){
+    function handleName(e: React.ChangeEvent<HTMLInputElement>){
         setForm((f) => ({...f, name: e.target.value}))};
 
-    function handleEmail(e){
+    function handleEmail(e: React.ChangeEvent<HTMLInputElement>){
         setForm((f) => ({...f, email: e.target.value}))};
 
-    function handleTime(e){
+    function handleTime(e: React.ChangeEvent<HTMLSelectElement>){
         setForm((f) => ({...f, resTime: e.target.value}))};
 
-    function handleGuests(e){
+    function handleGuests(e: React.ChangeEvent<HTMLInputElement>){
         setForm((f) => ({...f, guests: Number(e.target.value)}))};
 
-    function handleOccasion(e){
+    function handleOccasion(e: React.ChangeEvent<HTMLSelectElement>){
         setForm((f) => ({...f, occasion: e.target.value}))};
 
     return(
@@ -70,14 +85,14 @@ function BookingForm({availableTimes, dispatch, submitForm }){
             <h1 className='form-header'>Make your reservation</h1>
             <form
                 onSubmit={handleSubmit}>
-                
+
                 <div className='form-field'>
                     <label htmlFor="name">Full name</label>
                     <input
                         type="text"
                         placeholder="Enter your full name"
-                        minLength="3"
-                        maxLength="40"
+                        minLength={3}
+                        maxLength={40}
                         id="name"
                         required
                         value={form.name}
@@ -162,16 +177,16 @@ function BookingForm({availableTimes, dispatch, submitForm }){
                 </div>
 
                 <button id="form-button" type="submit" aria-label='Make your Reservation' disabled={
-                                        form.resDate==='' ||
-                                        form.name==='' ||
-                                        form.email==='' ||
-                                        form.occasion ===''
-                                        || errors.name
-                                        || errors.reDate
-                                        || errors.guests
-                                        || errors.email
-                                        || errors.resTime
-                                        || errors.occasion}>Make your Reservation</button>
+                                        !form.resDate ||
+                                        !form.name ||
+                                        !form.email ||
+                                        !form.occasion
+                                        || Boolean(errors.name)
+                                        || Boolean(errors.resDate)
+                                        || Boolean(errors.guests)
+                                        || Boolean(errors.email)
+                                        || Boolean(errors.resTime)
+                                        || Boolean(errors.occasion)}>Make your Reservation</button>
             </form>
         </div>
         </>

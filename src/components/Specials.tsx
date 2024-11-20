@@ -1,8 +1,9 @@
 import './Specials.css'
 import { SPECIALS } from '../helpers/specials';
 import { Link } from 'react-router-dom';
+import type { Special } from '../helpers/specials';
 
-function Specials(){
+const Specials: React.FC = (): JSX.Element => {
     return(
     <>
         <div className="specials-container">
@@ -11,7 +12,7 @@ function Specials(){
                 <button aria-label='Online Menu'>Online Menu</button>
             </div>
             <div className="specials-down">
-                {SPECIALS.map((element, index) => (
+                {SPECIALS.map((element: Special, index: number) => (
                     <div key={index} className="specials-card">
                         <img src={element.img} alt={element.title}/>
                         <div className="specials-card-text">

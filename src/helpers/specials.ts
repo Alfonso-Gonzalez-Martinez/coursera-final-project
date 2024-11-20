@@ -2,7 +2,14 @@ import bruchetta from '../assets/dish-bruchetta.jpg'
 import salad from '../assets/dish-greek-salad.jpg'
 import lemon from '../assets/dish-lemon.jpg'
 
-export const SPECIALS = [
+export type Special = {
+    img: string;
+    title: string;
+    price: number;
+    description: string;
+}
+
+export const SPECIALS: Special[] = [
     {
         img: bruchetta,
         title: "Bruchetta",

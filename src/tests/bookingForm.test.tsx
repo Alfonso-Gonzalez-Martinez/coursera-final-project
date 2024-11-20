@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, act} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import BookingForm from './components/BookingForm.js';
+import BookingForm from '../components/BookingForm';
 
 const availableTimes = ['17:00', '18:00', '19:00'];
 

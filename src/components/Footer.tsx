@@ -2,7 +2,7 @@ import logo2 from '../assets/logo-edit.png'
 import './Footer.css'
 import { Link } from 'react-router-dom';
 
-function Footer(){
+const Footer: React.FC = (): JSX.Element => {
     return(
         <>
          <div className="footer-container">
